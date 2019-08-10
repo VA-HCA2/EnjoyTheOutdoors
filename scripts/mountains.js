@@ -1,3 +1,5 @@
+// This program gives the User Information about Moutains Located in the US.
+//Author : Vanessa Arce 
 "use strict";
 
 window.onload = function () {
@@ -10,7 +12,7 @@ window.onload = function () {
 
         objs = data;
 
-
+    // Create my dropDown List.
         for (let i = 0; i < objs.mountains.length; i++) {
             let mt = objs.mountains[i].name;
             let element = document.createElement("option");
@@ -22,7 +24,6 @@ window.onload = function () {
     })
 
     mydropDown.onchange = function () {
-        // this where I write code that runs when the user picks something from the list box 
 
         // Get the moutain the user selects (same as select.index);
         let moutainSelection = mydropDown.value;

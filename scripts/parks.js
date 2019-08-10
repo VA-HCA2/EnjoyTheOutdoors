@@ -1,21 +1,23 @@
+// This program Searches National Parks depending on the the State or Park Type.
+//Author: Vanessa Arce 
 "use strict";
 window.onload = function () {
 
     document.getElementById("showBtn").onclick = getStates;
     document.getElementById("showStates").style.display = "block";
     document.getElementById("showParks").style.display = "none";
-    document.getElementById("tableLocation").style.display = "none";
+    document.getElementById("tableLocation").style.display = "block white";
 
     document.getElementById("locationParkBtn").onclick = function () {
         document.getElementById("showStates").style.display = "block";
         document.getElementById("showParks").style.display = "none";
-        document.getElementById("tableLocation").style.display = "block";
+        document.getElementById("tableLocation").style.display = "block white";
     }
 
     document.getElementById("parkRadioBtn").onclick = function () {
-        document.getElementById("showStates").style.display = "block";
-        document.getElementById("showParks").style.display = "none";
-        document.getElementById("tableLocation").style.display = "block";
+        document.getElementById("showParks").style.display = "block";
+        document.getElementById("showStates").style.display = "none";
+        document.getElementById("tableLocation").style.display = "block white";
     }
 
     let states = ["Alabama", "Alaska", "American Samoa", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "DC", "Florida",
@@ -25,7 +27,7 @@ window.onload = function () {
         "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virgin Islands", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
 
     let parksName = ["National Park", "National Monument", "Recreation Area", "Scenic Trail", "Battlefield", "Historic", "Memorial",
-        "Preserve", "Island", "River", "Seashore", "Trail", "Parkway"]
+        "Preserve", "Island", "River", "Seashore", "Trail", "Parkway"];
 
     // Get my HTML Elements by ID
     let mydropDown = document.getElementById("locationddl");
@@ -33,11 +35,13 @@ window.onload = function () {
     let mytable = document.getElementById("tableLocation")
 
     let objs;
+
     //Get JSON FOLDER/FILE NAME
     $.getJSON("data/nationalparks.json", function (data) {
 
         objs = data;
 
+        // Create my dropdwon list for my: Search by States
         for (let i = 0; i < states.length; i++) {
             let mt = states[i];
             let element = document.createElement("option");
@@ -46,15 +50,17 @@ window.onload = function () {
             mydropDown.appendChild(element);
 
         }
-
+         
+          // Create my dropdwon list for my : Search by Park 
         for (let i = 0; i < parksName.length; i++) {
-            let mt = parksName[i];
-            let element = document.createElement("option");
-            element.text = mt;
-            element.value = mt;
-            mydropDown2.appendChild(element);
+            let nationanlParksDdl = parksName[i];
+            let parksDdl = document.createElement("option");
+            parksDdl.text = nationanlParksDdl;
+            parksDdl.value = nationanlParksDdl;
+            mydropDown2.appendChild(parksDdl);
 
         }
+
     })
 
     function getStates() {
@@ -69,7 +75,7 @@ window.onload = function () {
             var header = table.createTHead();
             // Lenght of the table so we can put our header 
             var row = header.insertRow(table.rows.length);
-            // Two cell since we have Title and Price
+            // Cells for header 
             let cell0 = row.insertCell(0);
             let cell1 = row.insertCell(1);
             let cell2 = row.insertCell(2);
@@ -86,7 +92,7 @@ window.onload = function () {
             cell5.innerHTML = "<b>Phone</b>"
             cell6.innerHTML = "<b>Fax</b>"
 
-            // Loop thru the JSON Data to find the mountain 
+            // Loop thru the JSON Data to find the parks 
             for (let i = 0; i < objs.parks.length; i++) {
                 if (locationSelection == objs.parks[i].State) {
                     let row = mytable.insertRow(mytable.rows.length)
@@ -116,11 +122,6 @@ window.onload = function () {
         }
         else if (document.getElementById("parkRadioBtn").checked) {
 
-            // this where I write code that runs when the user picks something from the list box 
-
-            // Get the Parks the user selects (same as select.index);
-            let locationSelection2 = mydropDown2.value;
-
             //Clean the table 
             document.getElementById("tableLocation").innerHTML = "";
 
@@ -129,7 +130,7 @@ window.onload = function () {
             let header = table.createTHead();
             // Lenght of the table so we can put our header 
             var row = header.insertRow(table.rows.length);
-            // Two cell since we have Title and Price
+            // Cells for Header 
             let cell0 = row.insertCell(0);
             let cell1 = row.insertCell(1);
             let cell2 = row.insertCell(2);
@@ -146,11 +147,10 @@ window.onload = function () {
             cell5.innerHTML = "<b>Phone</b>"
             cell6.innerHTML = "<b>Fax</b>"
 
-            // Loop thru the JSON 
+            // Loop thru the JSON file
             for (let i = 0; i < objs.parks.length; i++) {
 
-                if (objs.parks[i].LocationName.toLowerCase().indexOf(mydropDown2.toLowerCase())>= 0);
-                {
+                if (objs.parks[i].LocationName.toLowerCase().indexOf(mydropDown2.value.toLowerCase()) >= 0) {
 
                     let row = mytable.insertRow(mytable.rows.length)
 

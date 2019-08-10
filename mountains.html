@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 
@@ -12,31 +11,39 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Outdoor Aventures</title>
+    <title>Enjoy the Outdoors</title>
 </head>
 
 <body>
     <nav
         class=" font-weight-bold d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-        <h1 class="title my-0 mr-md-auto font-weight-normal">Outdoor Adventures</h1>
+        <a class="title my-0 mr-md-auto font-weight-normal text-decoration-none" href="index.html">Enjoy the
+            Outdoors</a>
         <div class="my-2 my-md-0 mr-md ">
             <a class="p-2 text-success" href="index.html">Home</a>
-            <a class="p-2 text-success" href="parks.html">Parks</a>
+            <a class="p-2 text-success" href="parks.html">National Parks</a>
         </div>
     </nav>
 
-    <main class="row no-gutters">
-        <section class="container col-md-5 offset-md-4 formBorder">
-            <div class="col-md-9 mb-3 mountains font-weight-bold">
-                <label for="mountainsdd"> Mountains</label>
-                <select class="custom-select d-block w-100 " id="mountainsdd" name="mountainsdd">
-                </select>
-            </div>
-            <div class="col-md-9 mb-3">
-            <table class="table table-bordered" id="tableMnt">
-            </table>
-            </div>
-        </section>
+    <main>
+        <div class="container">
+            <!--Form-->
+            <form class="form " autocomplete="off" method="GET">
+                <section class="text-center container col-md-7  formBorder p-4 p-md-5  rounded border border-success">
+                    <!--Moutains dropdown-->
+                    <div class="mountains font-weight-bold text-center select1">
+                        <label for="mountainsdd"> Mountains</label>
+                        <select class="custom-select d-block w-100 " id="mountainsdd" name="mountainsdd">
+                        </select>
+                    </div>
+                    <!--Table-->
+                    <div class="col-md-9 mb-3">
+                        <table class="table table-bordered" id="tableMnt">
+                        </table>
+                    </div>
+                </section>
+            </form>
+        </div>
     </main>
 
     <!-- Optional JavaScript -->
