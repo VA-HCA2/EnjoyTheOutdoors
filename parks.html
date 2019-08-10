@@ -11,68 +11,56 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Enjoy the Outdoors</title>
+    <title>Outdoor Aventures</title>
 </head>
 
 <body>
     <nav
         class=" font-weight-bold d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-        <h1 class="title my-0 mr-md-auto font-weight-normal">Enjoy the Outdoors</h1>
+        <h1 class="title my-0 mr-md-auto font-weight-normal">Outdoor Adventures</h1>
         <div class="my-2 my-md-0 mr-md ">
             <a class="p-2 text-success" href="index.html">Home</a>
             <a class="p-2 text-success" href="mountains.html">Mountains</a>
         </div>
     </nav>
 
-    <main class="row no-gutters">
-        <!--RADIO BUTTONS
-        <div>
-            <section class="container col-md-5 offset-md-4 formBorder">
-                <div class="col-md-9 mb-3 mountains font-weight-bold">
-                    <label for="mountainsdd">National Parks</label>
-                    <div class="custom-control custom-radio">
-                        <input type="radio" id="showBtn" name="showBtn" class="custom-control-input">
-                        <label class="custom-control-label" for="showBtn" checked="">Search by Location</label>
+    <main>
+        <section class="text-center container col-md-7  formBorder ">
+                <div class="mountains font-weight-bold">
+                        <label for="mountainsdd">National Parks</label>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="locationParkBtn" name="optionBtn" class="custom-control-input">
+                            <label class="custom-control-label" for="locationParkBtn" >Search by Location</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="parkRadioBtn" name="optionBtn" class="custom-control-input">
+                            <label class="custom-control-label" for="parkRadioBtn">Search by Park Type</label>
+                        </div>
+                        <br>
+                        <div class="col">
+                                <button id="showBtn" type="button" class="btn btn-outline-success">Search</button>
+                        </div>
                     </div>
-                    <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                        <label class="custom-control-label" for="customRadio2">Search by Park Type</label>
-                    </div>
+
+            <div id="showStates">
+                <div class=" mountains font-weight-bold">
+                    <label for="locationddl"> Select Location</label>
+                    <select class="custom-select d-block w-100 " id="locationddl" name="locationddl">
+                    </select>
                 </div>
-            </section>
-        </div> -->
-        <!--End Radio Buttons div-->
-
-        <!--Div for location Dropdpown-->
-        <section class="container col-md-5 formBorder">
-            <div class="col-md-5 mb-3 mountains font-weight-bold">
-                <label for="locationddl"> Select Location</label>
-                <select class="custom-select d-block w-100 " id="locationddl" name="locationddl">
-                </select>
             </div>
-            <div class="col-md-9 mb-3">
+            <div id="showParks">
+                <div class="mountains font-weight-bold">
+                    <label for="parkddl"> Select Park</label>
+                    <select class="custom-select d-block w-100 " id="parkddl" name="parkddl">
+                    </select>
+                </div>
+            </div>
+            <div>
                 <table class="table table-bordered" id="tableLocation">
                 </table>
             </div>
         </section>
-        <section class="container col-md-5 formBorder">
-            <div class="col-md-5 mb-3 mountains font-weight-bold">
-                <label for="parkddl"> Select Park</label>
-                <select class="custom-select d-block w-100 " id="parkddl" name="parkddl">
-                </select>
-            </div>
-            <div class="col-md-9 mb-3">
-                <table class="table table-bordered" id="tableLocation">
-                </table>
-            </div>
-        </section>
-        <!--End of Div for location  -->
-        <!--Starts Div for Park Type-->
-        <div>
-
-        </div>
-        <!--End div for park type serch -->
-
     </main>
 
     <!-- Optional JavaScript -->
